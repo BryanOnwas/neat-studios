@@ -138,15 +138,15 @@ header {
 .top--social {
   flex-basis: 300px;
   border-left: 1px solid white;
-  height: inherit;
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  height: 66px;
   background-color: #222;
 }
 
 .top--social a {
-  margin: auto;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .fa-youtube-square,
@@ -345,11 +345,11 @@ footer #copyright {
   text-align: center;
 }
 
-.test{
+.test {
   padding-left: 0;
   transition: all 250ms linear;
 }
 
-.test__active{
+.test__active {
   padding-left: 300px;
 }
