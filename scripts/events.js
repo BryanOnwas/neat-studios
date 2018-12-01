@@ -127,6 +127,7 @@ function iconClick() {
   sideBar.classList.toggle('sidebar__open');
   modal.classList.toggle('modal-space__active');
   noScroll.classList.toggle('body__active');
+  activeTest.classList.toggle('test__active');
 }
 
 // Outside click functionally (in case of modal/sidebar outside clicks)
@@ -137,6 +138,7 @@ function outsideClick(event) {
     sideBar.classList.remove('sidebar__open');
     modal.classList.remove('modal-space__active');
     noScroll.classList.remove('body__active');
+    activeTest.classList.remove('test__active');
   }
 }
 

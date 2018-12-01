@@ -9,3 +9,4 @@ let modal = document.querySelector('.modal-space');
 let noScroll = document.querySelector('body');
 let topBtn = document.querySelector('.top-button');
 let head = document.querySelector('header');
+let activeTest = document.querySelector('.test');

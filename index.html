@@ -30,6 +30,11 @@
   </head>
 
   <body class="preload">
+    <aside class="sidebar">
+      <div class="sidebar--head"></div>
+      <div class="sidebar--body"></div>
+    </aside>
+
     <header>
       <div class="top">
         <div class="top--logo">
@@ -38,12 +43,13 @@
               <span class="hamburger-inner"></span>
             </span>
           </button>
-          <span>Neat Studios</span>
+          <span class="top--logo--brand">Neat Studios</span>
         </div>
         <div class="top--menu">
           <ul>
             <li><a href="#" title="Home" id="current">Home</a></li>
-            <li><a href="/demo" title="Demo">Demo</a></li>
+            <li><a title="Blog">Blog (Coming soon)</a></li>
+            <li><a href="/demo" title="Neko Club">Neko Club</a></li>
           </ul>
         </div>
 
@@ -75,64 +81,61 @@
       </div>
     </header>
 
-    <main>
-      <div id="showcase">
-        <div class="slide fade">
-          <img src="images/showcase.png" alt="showcase" />
-        </div>
+    <div class="test">
+      <main>
+        <div id="showcase">
+          <div class="slide fade">
+            <img src="images/showcase.png" alt="showcase" />
+          </div>
 
-        <div class="slide fade">
-          <img src="images/showcase.png" alt="showcase" />
-        </div>
+          <div class="slide fade">
+            <img src="images/showcase.png" alt="showcase" />
+          </div>
 
-        <div class="slide fade">
-          <img src="images/showcase.png" alt="showcase" />
-        </div>
+          <div class="slide fade">
+            <img src="images/showcase.png" alt="showcase" />
+          </div>
 
-        <!-- Arrows -->
-        <div class="arrow">
-          <div id="left-arrow"><span class="fas fa-chevron-left"></span></div>
-          <div id="right-arrow">
-            <span class="fas fa fa-chevron-right"></span>
+          <!-- Arrows -->
+          <div class="arrow">
+            <div id="left-arrow"><span class="fas fa-chevron-left"></span></div>
+            <div id="right-arrow">
+              <span class="fas fa fa-chevron-right"></span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Dots -->
-      <div id="dot-box">
-        <span class="dot"></span> <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
+        <!-- Dots -->
+        <div id="dot-box">
+          <span class="dot"></span> <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
 
-      <div id="content">
-        <p>Welcome to Neat Studios grand opening official website</p>
-      </div>
+        <div id="content">
+          <p>Welcome to Neat Studios grand opening official website</p>
+        </div>
 
-      <section class="content--tweet">
-        <a
-          class="twitter-timeline"
-          data-theme="light"
-          href="https://twitter.com/neatvns?ref_src=twsrc%5Etfw"
-          >Tweets by neatvns</a
-        >
-        <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charset="utf-8"
-        ></script>
-      </section>
-    </main>
+        <section class="content--tweet">
+          <a
+            class="twitter-timeline"
+            data-theme="light"
+            href="https://twitter.com/neatvns?ref_src=twsrc%5Etfw"
+            >Tweets by neatvns</a
+          >
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"
+          ></script>
+        </section>
+      </main>
 
-    <aside class="sidebar">
-      <div class="sidebar--head"></div>
-      <div class="sidebar--body"></div>
-    </aside>
-
-    <footer>
-      <p id="copyright">
-        Copyright &copy;2018 Neat Studios All Rights Reserved
-      </p>
-    </footer>
+      <footer>
+        <p id="copyright">
+          Copyright &copy;2018 Neat Studios All Rights Reserved
+        </p>
+      </footer>
+    </div>
     <button class="top-button"><a href="#" target="_top">top</a></button>
     <div class="modal-space" id="outside-click"></div>
     <script src="scripts/main.js"></script>

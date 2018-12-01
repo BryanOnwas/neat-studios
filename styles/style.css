@@ -22,7 +22,6 @@ body {
   min-width: 360px;
   background-color: white;
   width: 100%;
-  margin: auto;
 }
 
 .body__active {
@@ -98,19 +97,26 @@ header {
 
 .top--logo {
   flex-basis: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-right: 1px solid white;
   font-size: 2rem;
   height: inherit;
   background-color: #fc4f4f;
 }
 
-.top--logo .hamburger-inner,
-.top--logo .hamburger-inner::before,
-.top--logo .hamburger-inner::after,
-.top--logo .hamburger.is-active .hamburger-inner,
-.top--logo .hamburger.is-active .hamburger-inner::before,
-.top--logo .hamburger.is-active .hamburger-inner::after {
+.top .hamburger-inner,
+.top .hamburger-inner::before,
+.top .hamburger-inner::after,
+.top .hamburger.is-active .hamburger-inner,
+.top .hamburger.is-active .hamburger-inner::before,
+.top .hamburger.is-active .hamburger-inner::after {
   background-color: white;
+}
+
+.top--logo--brand {
+  padding: 15px;
 }
 
 .top--menu {
@@ -291,7 +297,7 @@ main #content p {
   width: 300px;
   background-color: #333;
   overflow: auto;
-  transition: left 250ms ease;
+  transition: left 250ms linear;
 }
 
 .sidebar__open {
@@ -302,7 +308,7 @@ main #content p {
   height: 100vh;
   width: 300px;
   background-color: #333;
-  transition: left 250ms ease;
+  transition: left 250ms linear;
 }
 
 /* Footer Selectors */
@@ -337,4 +343,13 @@ footer #copyright {
   padding: 4px;
   color: white;
   text-align: center;
+}
+
+.test{
+  padding-left: 0;
+  transition: all 250ms linear;
+}
+
+.test__active{
+  padding-left: 300px;
 }
