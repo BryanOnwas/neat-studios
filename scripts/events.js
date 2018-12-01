@@ -162,9 +162,9 @@ function headTop() {
 
 // Change which Y-position the top button is visible/invisible
 function btnTop() {
-  if (window.scrollY > 0) {
+  if (window.scrollY > 200) {
     topBtn.style.right = '0';
-  } else if (window.scrollY === 0) {
+  } else if (window.scrollY < 200) {
     topBtn.style.right = '-100px';
   }
 }
