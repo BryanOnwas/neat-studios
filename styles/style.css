@@ -38,7 +38,7 @@ body.preload * {
   bottom: 0;
   right: 0;
   top: 0;
-  transition: all 200ms ease;
+  transition: 200ms ease;
   z-index: -1;
 }
 
@@ -153,20 +153,17 @@ header {
 .fa-facebook-square,
 .fa-twitter-square {
   box-sizing: content-box;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #fff;
-  border: 2px solid gray;
-  border-radius: 50%;
   padding: 0.5rem;
   background-color: #222;
-  transition: background-color 0.25s ease;
+  transition: 0.5s ease;
 }
 
 .fa-youtube-square:hover,
 .fa-facebook-square:hover,
 .fa-twitter-square:hover {
   background: #fff;
-  border: 2px solid transparent;
 }
 
 .fa-youtube-square:hover {
@@ -256,7 +253,7 @@ main .dot {
   background-color: gray;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.5s ease;
+  transition: 0.5s ease;
 }
 
 main #active,
@@ -297,7 +294,7 @@ main #content p {
   width: 300px;
   background-color: #333;
   overflow: auto;
-  transition: left 250ms linear;
+  transition: left 250ms ease-out;
 }
 
 .sidebar__open {
@@ -308,7 +305,7 @@ main #content p {
   height: 100vh;
   width: 300px;
   background-color: #333;
-  transition: left 250ms linear;
+  transition: left 250ms ease-out;
 }
 
 /* Footer Selectors */
@@ -332,8 +329,9 @@ footer #copyright {
   right: -100px;
   z-index: 20;
   background-color: #222;
-  transition: right 0.25s ease;
+  transition: 0.25s ease;
   width: 100px;
+  border: none;
 }
 
 .top-button a {
@@ -347,7 +345,7 @@ footer #copyright {
 
 .test {
   padding-left: 0;
-  transition: all 250ms linear;
+  transition: 250ms ease-out;
 }
 
 .test__active {

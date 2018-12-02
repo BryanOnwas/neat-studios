@@ -175,18 +175,18 @@ function scrollTop() {
 // Change header opacity to 100% when not on top
 // Change header opacity to 90% when on top
 function headTop() {
-  if (window.scrollY > 0) {
+  if (window.pageYOffset > 0) {
     head.style.opacity = '1';
-  } else if (window.scrollY === 0) {
+  } else if (window.pageYOffset === 0) {
     head.style.opacity = '0.9';
   }
 }
 
 // Change which Y-position the top button is visible/invisible
 function btnTop() {
-  if (window.scrollY > 200) {
+  if (window.pageYOffset > 200) {
     topBtn.style.right = '0';
-  } else if (window.scrollY < 200) {
+  } else if (window.pageYOffset < 200) {
     topBtn.style.right = '-100px';
   }
 }
@@ -197,8 +197,12 @@ start();
 //-----------------------------------
 
 function scrollIt(destination) {
-  var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 200;
-  var easing = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'linear';
+  var duration =
+    arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 200;
+  var easing =
+    arguments.length > 2 && arguments[2] !== undefined
+      ? arguments[2]
+      : 'linear';
   var callback = arguments[3];
 
   var easings = {
@@ -247,16 +251,31 @@ function scrollIt(destination) {
   // If performance is not available in your browser
   // It will fallback to new Date().getTime() - thanks IE < 10
   var start = window.pageYOffset;
-  var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+  var startTime =
+    'now' in window.performance ? performance.now() : new Date().getTime();
   // const startTime = typeof(window.performance['now']) == 'function' ? performance.now() : new Date().getTime();
 
   // Take height of window and document to sesolve max scrollable value
   // Prevent requestAnimationFrame() from scrolling below maximum scollable value
   // Resolve destination type (node or number)
-  var documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-  var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-  var destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
-  var destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+  var documentHeight = Math.max(
+    document.body.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.clientHeight,
+    document.documentElement.scrollHeight,
+    document.documentElement.offsetHeight
+  );
+  var windowHeight =
+    window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.getElementsByTagName('body')[0].clientHeight;
+  var destinationOffset =
+    typeof destination === 'number' ? destination : destination.offsetTop;
+  var destinationOffsetToScroll = Math.round(
+    documentHeight - destinationOffset < windowHeight
+      ? documentHeight - windowHeight
+      : destinationOffset
+  );
 
   // If requestAnimationFrame is not supported
   // Move window to destination position and trigger callback function
@@ -271,10 +290,14 @@ function scrollIt(destination) {
   // function resolves position of a window and moves to exact amount of pixels
   // Resolved by calculating delta and timing function choosen by user
   function scroll() {
-    var now = 'now' in window.performance ? performance.now() : new Date().getTime();
+    var now =
+      'now' in window.performance ? performance.now() : new Date().getTime();
     var time = Math.min(1, (now - startTime) / duration);
     var timeFunction = easings[easing](time);
-    window.scroll(0, Math.ceil(timeFunction * (destinationOffsetToScroll - start) + start));
+    window.scroll(
+      0,
+      Math.ceil(timeFunction * (destinationOffsetToScroll - start) + start)
+    );
 
     // Stop requesting animation when window reached its destination
     // And run a callback function
