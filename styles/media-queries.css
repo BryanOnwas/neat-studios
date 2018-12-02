@@ -1,0 +1,19 @@
+/* Mobile Only*/
+@media (max-width: 768px) {
+}
+
+/* Tablet Only */
+@media (max-width: 1024px) {
+}
+
+/* Desktop Only*/
+@media (max-width: 1216px) {
+}
+
+/* Widescreen-Desktop Only */
+@media (max-width: 1408px) {
+}
+
+/* Full HD Only */
+@media (min-width: 1408px) {
+}
