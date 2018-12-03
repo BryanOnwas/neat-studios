@@ -125,9 +125,16 @@ header {
   height: inherit;
 }
 
-.top--menu #current,
+.top--menu li {
+  transition: 0.5s ease;
+}
+
+.top--menu li #current {
+  box-shadow: inset 0 -4px skyblue;
+}
+
 .top--menu li:hover {
-  box-shadow: inset 0 4px #fff;
+  box-shadow: inset 0 -4px #fff;
 }
 
 .top--menu li a {
@@ -145,6 +152,7 @@ header {
 .top--social a {
   display: inline-block;
   position: relative;
+  padding: 0 0.5rem;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -163,7 +171,7 @@ header {
 .fa-youtube-square:hover,
 .fa-facebook-square:hover,
 .fa-twitter-square:hover {
-  background: #fff;
+  box-shadow: inset 0 -4px #fff;
 }
 
 .fa-youtube-square:hover {
