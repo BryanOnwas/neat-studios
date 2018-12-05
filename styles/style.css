@@ -125,12 +125,16 @@ header {
   height: inherit;
 }
 
+.top--menu ul {
+  display: block;
+}
+
 .top--menu li {
-  transition: 0.5s ease;
+  transition: 0.25s ease;
 }
 
 .top--menu li #current {
-  box-shadow: inset 0 -4px skyblue;
+  background-color: #fc4f4f;
 }
 
 .top--menu li:hover {
@@ -139,7 +143,8 @@ header {
 
 .top--menu li a {
   display: block;
-  padding: 1.5rem 2rem;
+  line-height: 66px;
+  padding: 0 2rem;
 }
 
 .top--social {
@@ -165,7 +170,7 @@ header {
   color: #fff;
   padding: 0.5rem;
   background-color: #222;
-  transition: 0.5s ease;
+  transition: 0.25s ease;
 }
 
 .fa-youtube-square:hover,
