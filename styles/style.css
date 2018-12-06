@@ -55,7 +55,7 @@ body.preload * {
 img {
   display: block;
   height: auto;
-  min-width: 100%;
+  max-width: 100%;
 }
 
 ul {
@@ -89,20 +89,20 @@ header {
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 66px;
+  align-items: stretch;
   background-color: #333;
   color: white;
+  flex-wrap: wrap;
 }
 
 .top--logo {
   flex-basis: 300px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-right: 1px solid white;
   font-size: 2rem;
-  height: inherit;
   background-color: #fc4f4f;
 }
 
@@ -121,8 +121,7 @@ header {
 
 .top--menu {
   flex-basis: auto;
-  flex-grow: 1;
-  height: inherit;
+  background-color: inherit;
 }
 
 .top--menu ul {
@@ -150,8 +149,7 @@ header {
 .top--social {
   flex-basis: 300px;
   border-left: 1px solid white;
-  height: 66px;
-  background-color: #222;
+  background-color: #000;
 }
 
 .top--social a {
@@ -169,7 +167,6 @@ header {
   font-size: 2rem;
   color: #fff;
   padding: 0.5rem;
-  background-color: #222;
   transition: 0.25s ease;
 }
 
