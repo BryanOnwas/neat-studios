@@ -11,7 +11,7 @@
 }
 
 html {
-  font-family: 'Exo 2', Arial, Helvetica, sans-serif;
+  font-family: 'Exo 2', 'Montserrat', 'Roboto', 'Lato', 'Open Sans', Arial, Helvetica, sans-serif;
   line-height: 1;
   font-size: 1rem;
 }
@@ -102,7 +102,7 @@ header {
   justify-content: center;
   align-items: center;
   border-right: 1px solid white;
-  font-size: 2rem;
+  font-size: 1.9rem;
   background-color: #fc4f4f;
 }
 
