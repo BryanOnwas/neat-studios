@@ -1,47 +1,6 @@
-/* Define Varibles */
-$primary: #fc4f4f;
-$primary-light: lighten(#fc4f4f, 40%);
-$primary-dark: darken(#fc4f4f, 40%);
-$default: transparent;
-$black: #000;
-$dark: #333;
-$light: #eee;
-$white: #fff;
-
-/* Mobile Only */
-@mixin mobile {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
-
-/* Tablet Only */
-@mixin tablet {
-  @media (max-width: 1024px) {
-    @content;
-  }
-}
-
-/* Desktop Only */
-@mixin desktop {
-  @media (max-width: 1216px) {
-    @content;
-  }
-}
-
-/* Widescreen-Desktop Only */
-@mixin widescreen {
-  @media (max-width: 1408px) {
-    @content;
-  }
-}
-
-/* Full HD Only */
-@mixin fullhd {
-  @media (min-width: 1408px) {
-    @content;
-  }
-}
+@import 'variables';
+@import 'mixins';
+@import 'hamburgers';
 
 /* Global Selectors */
 *,
@@ -67,14 +26,6 @@ body {
   min-width: 360px;
   background-color: $white;
   width: 100%;
-
-  &__active {
-    overflow: hidden;
-  }
-
-  .preload * {
-    animation-duration: 0s !important;
-  }
 }
 
 .modal-space {
@@ -237,7 +188,7 @@ header {
 /* Main Section */
 
 main {
-  #showcase {
+  .showcase {
     position: relative;
     height: auto;
     width: 100%;
@@ -246,6 +197,16 @@ main {
 
   .slide {
     display: none;
+    animation: fade 1s ease-out;
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 
   img {
@@ -254,21 +215,8 @@ main {
     width: 100%;
   }
 
-  .fade {
-    animation: fade 1s ease-in-out;
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  #left-arrow,
-  #right-arrow {
+  .left-arrow,
+  .right-arrow {
     position: absolute;
     font-size: 1.5rem;
     font-weight: bold;
@@ -281,22 +229,22 @@ main {
     transition: 0.5s ease;
   }
 
-  #left-arrow {
+  .left-arrow {
     left: 0;
     border-radius: 0 3px 3px 0;
   }
 
-  #right-arrow {
+  .right-arrow {
     right: 0;
     border-radius: 3px 0 0 3px;
   }
 
-  #left-arrow:hover,
-  #right-arrow:hover {
+  .left-arrow:hover,
+  .right-arrow:hover {
     opacity: 0.8;
   }
 
-  #dot-box {
+  .dot-box {
     background-color: $light;
     padding: 1rem;
     position: relative;

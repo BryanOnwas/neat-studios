@@ -1,15 +1,10 @@
 let images = document.querySelectorAll('.slide');
-let dots = document.querySelectorAll('.dot');
-let left = document.querySelector('#left-arrow');
-let right = document.querySelector('#right-arrow');
-let fade = document.querySelectorAll('.fade');
-let sideBar = document.querySelector('.sidebar');
-let hamburger = document.querySelector('.hamburger');
-let modal = document.querySelector('.modal-space');
-let noScroll = document.querySelector('body');
+let navDots = document.querySelectorAll('.dot');
+let navIcon = document.querySelector('.hamburger');
+let leftArrow = document.querySelector('.left-arrow');
+let rightArrow = document.querySelector('.right-arrow');
 let topBtn = document.querySelector('.top-button');
 let head = document.querySelector('header');
-let activeTest = document.querySelector('.test');
 
 const seconds = 5000;
 let time = setInterval(auto, seconds);
@@ -21,52 +16,41 @@ var scroll = new SmoothScroll('a[href*="#"]', {
   offset: 64
 });
 
-hamburger.addEventListener('click', iconClick);
-window.addEventListener('click', outsideClick);
-topBtn.addEventListener('click', scrollTop);
+navIcon.addEventListener('click', iconClick);
 window.addEventListener('scroll', headTop);
 window.addEventListener('scroll', btnTop);
-
-// Skips the first fade animation after page loads
-// Note: If the CSS animation plays at x seconds, the timeout should be set longer than x seconds. I would add at least 0.5 more seconds just to be safe
-// Note: This function will disable if the content inside the timeout function was added on any event handler
-function delay() {
-  setTimeout(function() {
-    document.body.className = '';
-  }, 1000);
-}
 
 // Init slider
 function reset() {
   for (let i = 0; i < images.length; i++) {
     images[0].style.display = 'none';
-    dots[0].id = '';
+    navDots[0].id = '';
   }
 }
 
 // Automate slider
 function auto() {
-  current = (current + 1) % dots.length;
+  current = (current + 1) % navDots.length;
   start();
 }
 
 // Start slider
 function start() {
   reset();
-  for (let i = 0; i < dots.length; i++) {
+  for (let i = 0; i < navDots.length; i++) {
     if (current === i) {
       images[i].style.display = 'block';
-      dots[i].id = 'active';
+      navDots[i].id = 'active';
     } else {
       images[i].style.display = 'none';
-      dots[i].id = '';
+      navDots[i].id = '';
     }
   }
 }
 
 // Manual slider
-for (let i = 0; i < dots.length; i++) {
-  dots[i].addEventListener('click', function(e) {
+for (let i = 0; i < navDots.length; i++) {
+  navDots[i].addEventListener('click', function(e) {
     document.body.className = '';
     if (current === i || e.target.className !== 'dot') {
       return;
@@ -80,10 +64,10 @@ for (let i = 0; i < dots.length; i++) {
 }
 
 // Left arrow click
-left.addEventListener('click', function() {
+leftArrow.addEventListener('click', function() {
   document.body.className = '';
   if (current === 0) {
-    current = dots.length - 1;
+    current = navDots.length - 1;
   } else {
     current--;
   }
@@ -91,9 +75,9 @@ left.addEventListener('click', function() {
 });
 
 // Right arrow click
-right.addEventListener('click', function() {
+rightArrow.addEventListener('click', function() {
   document.body.className = '';
-  if (current === dots.length - 1) {
+  if (current === navDots.length - 1) {
     current = 0;
   } else {
     current++;
@@ -118,56 +102,31 @@ for (let i = 0; i < images.length; i++) {
   start();
 }
 
-// Stop automatic slider when left arrow hovered
-left.addEventListener('mouseenter', function() {
+// Stop automatic slider when left arrow is hovered
+leftArrow.addEventListener('mouseenter', function() {
   clearInterval(time);
 });
 
-// Stop automatic slider when right arrow hovered
-right.addEventListener('mouseenter', function() {
+// Stop automatic slider when right arrow is hovered
+rightArrow.addEventListener('mouseenter', function() {
   clearInterval(time);
 });
 
-// Stop automatic slider when left arrow hovered
-left.addEventListener('mouseleave', function() {
+// Start automatic slider when left arrow is not hovered
+leftArrow.addEventListener('mouseleave', function() {
   clearInterval(time);
   time = setInterval(auto, seconds);
 });
 
-// Stop automatic slider when right arrow hovered
-right.addEventListener('mouseleave', function() {
+// Start automatic slider when right arrow is not hovered
+rightArrow.addEventListener('mouseleave', function() {
   clearInterval(time);
   time = setInterval(auto, seconds);
 });
 
 // Hamburger icon click functionally
 function iconClick() {
-  hamburger.classList.toggle('is-active');
-  sideBar.classList.toggle('sidebar__open');
-  modal.classList.toggle('modal-space__active');
-  noScroll.classList.toggle('body__active');
-  activeTest.classList.toggle('test__active');
-}
-
-// Outside click functionally (in case of modal/sidebar outside clicks)
-// Listen for outside clicks
-function outsideClick(event) {
-  if (event.target.id === 'outside-click') {
-    hamburger.classList.remove('is-active');
-    sideBar.classList.remove('sidebar__open');
-    modal.classList.remove('modal-space__active');
-    noScroll.classList.remove('body__active');
-    activeTest.classList.remove('test__active');
-  }
-}
-
-// Scroll-to-top functionally
-function scrollTop() {
-  scrollIt(0, 300, 'easeOutQuad');
-  window.removeEventListener('scroll', headTop);
-  setTimeout(function() {
-    window.addEventListener('scroll', headTop);
-  }, 300);
+  navIcon.classList.toggle('is-active');
 }
 
 // Change header opacity when scrolled away from top
@@ -190,5 +149,4 @@ function btnTop() {
   }
 }
 
-delay();
 start();
