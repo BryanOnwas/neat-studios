@@ -65,42 +65,32 @@ for (let i = 0; i < navDots.length; i++) {
 
 // Left arrow click
 leftArrow.addEventListener('click', function() {
-  document.body.className = '';
-  if (current === 0) {
-    current = navDots.length - 1;
-  } else {
-    current--;
-  }
+  current === 0 ? (current = navDots.length - 1) : current--;
   start();
 });
 
 // Right arrow click
 rightArrow.addEventListener('click', function() {
-  document.body.className = '';
-  if (current === navDots.length - 1) {
-    current = 0;
-  } else {
-    current++;
-  }
+  current === navDots.length - 1 ? (current = 0) : current++;
   start();
 });
 
 // Stop automatic slide when hovered
-for (let i = 0; i < images.length; i++) {
-  images[i].addEventListener('mouseover', function() {
+images.forEach(function(image) {
+  image.addEventListener('mouseover', function() {
     clearInterval(time);
   });
   start();
-}
+});
 
 // Start automatic slide when not hovered
-for (let i = 0; i < images.length; i++) {
-  images[i].addEventListener('mouseout', function() {
+images.forEach(function(image) {
+  image.addEventListener('mouseout', function() {
     clearInterval(time);
     time = setInterval(auto, seconds);
   });
   start();
-}
+});
 
 // Stop automatic slider when left arrow is hovered
 leftArrow.addEventListener('mouseenter', function() {

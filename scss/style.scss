@@ -102,15 +102,6 @@ header {
     background-color: $primary;
   }
 
-  .top .hamburger-inner,
-  .top .hamburger-inner::before,
-  .top .hamburger-inner::after,
-  .top .hamburger.is-active .hamburger-inner,
-  .top .hamburger.is-active .hamburger-inner::before,
-  .top .hamburger.is-active .hamburger-inner::after {
-    background-color: $white;
-  }
-
   .top--logo--brand {
     padding: 15px;
   }

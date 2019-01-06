@@ -33,17 +33,17 @@
 }
 
 .hamburger:hover {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .hamburger.is-active:hover {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: #000;
+  background-color: #fff;
 }
 
 .hamburger-box {
@@ -64,7 +64,7 @@
 .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: #000;
+  background-color: #fff;
   border-radius: 4px;
   position: absolute;
   -webkit-transition-property: -webkit-transform;
@@ -1490,15 +1490,6 @@ header .top--logo {
   border-right: 1px solid #fff;
   font-size: 1.9rem;
   background-color: #fc4f4f;
-}
-
-header .top .hamburger-inner,
-header .top .hamburger-inner::before,
-header .top .hamburger-inner::after,
-header .top .hamburger.is-active .hamburger-inner,
-header .top .hamburger.is-active .hamburger-inner::before,
-header .top .hamburger.is-active .hamburger-inner::after {
-  background-color: #fff;
 }
 
 header .top--logo--brand {
