@@ -6,7 +6,7 @@ let rightArrow = document.querySelector('.right-arrow');
 let topBtn = document.querySelector('.top-button');
 let head = document.querySelector('header');
 
-const seconds = 5000;
+const seconds = 3000;
 let time = setInterval(auto, seconds);
 let current = 0;
 
