@@ -189,7 +189,7 @@ main {
   .slide {
     display: none;
     animation: fade 1s ease-out;
-
+  
     @keyframes fade {
       from {
         opacity: 0;

@@ -7,12 +7,12 @@ let rightArrow = document.querySelector('.right-arrow');
 let topBtn = document.querySelector('.top-button');
 let head = document.querySelector('header');
 
-const seconds = 3000;
+const seconds = 5000;
 let time = setInterval(auto, seconds);
 let current = 0;
 
 // Include Smooth Scroll functionality
-var scroll = new SmoothScroll('a[href*="#"]', {
+let scroll = new SmoothScroll('a[href*="#"]', {
   speed: 500,
   offset: 64
 });
