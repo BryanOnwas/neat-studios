@@ -1660,7 +1660,7 @@ main .dot {
   transition: 0.5s ease;
 }
 
-main #active,
+main .active,
 main .dot:hover {
   background-color: #333;
 }

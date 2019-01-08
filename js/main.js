@@ -1,3 +1,4 @@
+//Declare Variables
 let images = document.querySelectorAll('.slide');
 let navDots = document.querySelectorAll('.dot');
 let navIcon = document.querySelector('.hamburger');
@@ -16,17 +17,10 @@ var scroll = new SmoothScroll('a[href*="#"]', {
   offset: 64
 });
 
+// Event Handlers
 navIcon.addEventListener('click', iconClick);
 window.addEventListener('scroll', headTop);
 window.addEventListener('scroll', btnTop);
-
-// Init slider
-function reset() {
-  for (let i = 0; i < images.length; i++) {
-    images[0].style.display = 'none';
-    navDots[0].id = '';
-  }
-}
 
 // Automate slider
 function auto() {
@@ -36,32 +30,29 @@ function auto() {
 
 // Start slider
 function start() {
-  reset();
-  for (let i = 0; i < navDots.length; i++) {
+  navDots.forEach(function(navDot, i) {
     if (current === i) {
       images[i].style.display = 'block';
-      navDots[i].id = 'active';
+      navDot.classList.add('active');
     } else {
       images[i].style.display = 'none';
-      navDots[i].id = '';
+      navDot.classList.remove('active');
     }
-  }
+  });
 }
 
 // Manual slider
-for (let i = 0; i < navDots.length; i++) {
-  navDots[i].addEventListener('click', function(e) {
-    document.body.className = '';
-    if (current === i || e.target.className !== 'dot') {
+navDots.forEach(function(navDot, i) {
+  navDot.addEventListener('click', function() {
+    if (current === i || navDot.className !== 'dot') {
       return;
-    } else {
-      clearInterval(time);
-      time = setInterval(auto, seconds);
     }
+    clearInterval(time);
+    time = setInterval(auto, seconds);
     current = i;
     start();
   });
-}
+});
 
 // Left arrow click
 leftArrow.addEventListener('click', function() {
@@ -119,24 +110,12 @@ function iconClick() {
   navIcon.classList.toggle('is-active');
 }
 
-// Change header opacity when scrolled away from top
-// Change header opacity to 100% when not on top
-// Change header opacity to 90% when on top
+// Change header opacity to 100% when not on top and to 90% when on top
 function headTop() {
-  if (window.pageYOffset > 0) {
-    head.style.opacity = '1';
-  } else if (window.pageYOffset === 0) {
-    head.style.opacity = '0.9';
-  }
+  window.pageYOffset > 0 ? (head.style.opacity = '1') : (head.style.opacity = '0.9');
 }
 
 // Change which Y-position the top button is visible/invisible
 function btnTop() {
-  if (window.pageYOffset > 200) {
-    topBtn.style.right = '0';
-  } else if (window.pageYOffset < 200) {
-    topBtn.style.right = '-100px';
-  }
+  window.pageYOffset > 200 ? (topBtn.style.right = '0') : (topBtn.style.right = '-100px');
 }
-
-start();
