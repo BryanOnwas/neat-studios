@@ -51,9 +51,6 @@ function start() {
 // Manual slider
 navDots.forEach(function(navDot, i) {
   navDot.addEventListener('click', function() {
-    if (current === i || navDot.className !== 'dot') {
-      return;
-    }
     document.body.className = '';
     clearInterval(time);
     time = setInterval(auto, seconds);
