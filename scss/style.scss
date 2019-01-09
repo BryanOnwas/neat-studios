@@ -56,7 +56,7 @@ body {
 img {
   display: block;
   height: auto;
-  max-width: 100%;
+  width: 100%;
 }
 
 ul {
@@ -284,7 +284,7 @@ main {
     border-radius: 4px;
     max-width: 80%;
     text-align: center;
-    margin: auto;
+    margin: 4rem auto;
     overflow: scroll;
     max-height: 960px;
     position: relative;

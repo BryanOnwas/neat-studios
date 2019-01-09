@@ -143,4 +143,5 @@ function btnTop() {
   window.pageYOffset > 200 ? topBtn.classList.add('active') : topBtn.classList.remove('active');
 }
 
+// Function Calls (if any)
 delay();
