@@ -1398,7 +1398,7 @@ body {
   overflow-x: hidden;
   text-align: center;
   min-width: 360px;
-  background-color: #fff;
+  background-color: #ece2d5;
   width: 100%;
 }
 
@@ -1418,14 +1418,14 @@ body.preload * {
   z-index: -1;
 }
 
-.modal-space__active {
+.modal-space.active {
   position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
   top: 0;
   background-color: #000;
-  opacity: 0.3;
+  opacity: 0.1;
   z-index: 5;
 }
 
@@ -1453,6 +1453,17 @@ li > a {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+main,
+footer {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+main.resize,
+footer.resize {
+  padding-left: 300px;
 }
 
 /* Header Selectors */
@@ -1705,7 +1716,7 @@ main .content--tweet {
   transition: left 250ms ease-out;
 }
 
-.sidebar__open {
+.sidebar.open {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -1736,13 +1747,19 @@ footer #copyright {
 .top-button {
   position: fixed;
   bottom: 0;
-  right: -100px;
-  z-index: 20;
+  right: 0;
+  z-index: -1;
   background-color: #000;
   -webkit-transition: 0.25s ease;
   transition: 0.25s ease;
   width: 100px;
   border: none;
+  opacity: 0;
+}
+
+.top-button.active {
+  z-index: 10;
+  opacity: 1;
 }
 
 .top-button a {

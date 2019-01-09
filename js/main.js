@@ -6,6 +6,10 @@ let leftArrow = document.querySelector('.left-arrow');
 let rightArrow = document.querySelector('.right-arrow');
 let topBtn = document.querySelector('.top-button');
 let head = document.querySelector('header');
+let sideBar = document.querySelector('aside');
+let space = document.querySelector('.modal-space');
+let content = document.querySelector('main');
+let foot = document.querySelector('footer');
 
 const seconds = 5000;
 let time = setInterval(auto, seconds);
@@ -28,6 +32,7 @@ let scroll = new SmoothScroll('a[href*="#"]', {
 navIcon.addEventListener('click', iconClick);
 window.addEventListener('scroll', headTop);
 window.addEventListener('scroll', btnTop);
+space.addEventListener('click', outsideClick);
 
 // Automate slider
 function auto() {
@@ -38,23 +43,26 @@ function auto() {
 // Start slider
 function start() {
   navDots.forEach(function(navDot, i) {
-    if (current === i) {
-      images[i].style.display = 'block';
-      navDot.classList.add('active');
-    } else {
-      images[i].style.display = 'none';
-      navDot.classList.remove('active');
-    }
+    current === i ? navDot.classList.add('active') : navDot.classList.remove('active');
   });
+
+  images.forEach(function(image, i) {
+    current === i ? image.classList.add('active') : image.classList.remove('active');
+  });
+}
+
+// Reset/Restart Slider Time
+function reset() {
+  clearInterval(time);
+  time = setInterval(auto, seconds);
 }
 
 // Manual slider
 navDots.forEach(function(navDot, i) {
   navDot.addEventListener('click', function() {
     document.body.className = '';
-    clearInterval(time);
-    time = setInterval(auto, seconds);
     current = i;
+    reset();
     start();
   });
 });
@@ -83,8 +91,7 @@ images.forEach(function(image) {
 // Start automatic slide when not hovered
 images.forEach(function(image) {
   image.addEventListener('mouseout', function() {
-    clearInterval(time);
-    time = setInterval(auto, seconds);
+    reset();
   });
 });
 
@@ -100,19 +107,30 @@ rightArrow.addEventListener('mouseenter', function() {
 
 // Start automatic slider when left arrow is not hovered
 leftArrow.addEventListener('mouseleave', function() {
-  clearInterval(time);
-  time = setInterval(auto, seconds);
+  reset();
 });
 
 // Start automatic slider when right arrow is not hovered
 rightArrow.addEventListener('mouseleave', function() {
-  clearInterval(time);
-  time = setInterval(auto, seconds);
+  reset();
 });
 
 // Hamburger icon click functionally
 function iconClick() {
   navIcon.classList.toggle('is-active');
+  sideBar.classList.toggle('open');
+  space.classList.toggle('active');
+  content.classList.toggle('resize');
+  foot.classList.toggle('resize');
+}
+
+// Outside click functioinally
+function outsideClick() {
+  navIcon.classList.remove('is-active');
+  sideBar.classList.remove('open');
+  space.classList.remove('active');
+  content.classList.remove('resize');
+  foot.classList.remove('resize');
 }
 
 // Change header opacity to 100% when not on top and to 90% when on top
@@ -122,7 +140,7 @@ function headTop() {
 
 // Change which Y-position the top button is visible/invisible
 function btnTop() {
-  window.pageYOffset > 200 ? (topBtn.style.right = '0') : (topBtn.style.right = '-100px');
+  window.pageYOffset > 200 ? topBtn.classList.add('active') : topBtn.classList.remove('active');
 }
 
 delay();

@@ -24,7 +24,7 @@ body {
   overflow-x: hidden;
   text-align: center;
   min-width: 360px;
-  background-color: $white;
+  background-color: $background;
   width: 100%;
 
   &.preload * {
@@ -41,14 +41,14 @@ body {
   transition: 250ms ease;
   z-index: -1;
 
-  &__active {
+  &.active {
     position: fixed;
     left: 0;
     bottom: 0;
     right: 0;
     top: 0;
     background-color: $black;
-    opacity: 0.3;
+    opacity: 0.1;
     z-index: 5;
   }
 }
@@ -77,6 +77,15 @@ li > a {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+main,
+footer {
+  transition: 250ms ease-out;
+
+  &.resize {
+    padding-left: 300px;
+  }
 }
 
 /* Header Selectors */
@@ -295,7 +304,7 @@ main {
   overflow: auto;
   transition: left 250ms ease-out;
 
-  &__open {
+  &.open {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -325,12 +334,18 @@ footer {
 .top-button {
   position: fixed;
   bottom: 0;
-  right: -100px;
-  z-index: 20;
+  right: 0;
+  z-index: -1;
   background-color: $black;
   transition: 0.25s ease;
   width: 100px;
   border: none;
+  opacity: 0;
+
+  &.active {
+    z-index: 10;
+    opacity: 1;
+  }
 
   a {
     display: block;

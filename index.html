@@ -25,12 +25,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" />
 
-    <!-- CSS Files/Dependencies -->
+    <!-- CSS Files/Dependencies/CDN -->
     <link rel="stylesheet" href="css/hamburgers.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body class="preload">
+    <!-- Header -->
     <header>
       <div class="top">
         <div class="top--logo">
@@ -64,7 +65,9 @@
         </nav>
       </div>
     </header>
+    <!-- End Header -->
 
+    <!-- Main Content -->
     <main id="top">
       <div class="showcase">
         <div class="slide active"><img src="images/showcase.png" alt="showcase" /></div>
@@ -77,25 +80,45 @@
 
         <div class="slide"><img src="images/showcase.png" alt="showcase" /></div>
 
-        <!-- Arrows -->
+        <!-- Nav Arrows / Slider Arrows -->
         <div class="arrow">
           <div class="left-arrow"><span class="fas fa-chevron-left"></span></div>
           <div class="right-arrow"><span class="fas fa fa-chevron-right"></span></div>
         </div>
       </div>
 
-      <!-- Dots -->
+      <!-- Nav Dots / Slider Dots -->
       <div class="dot-box">
         <span class="dot active"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
       </div>
     </main>
+    <!-- End Main Content -->
 
+    <!-- Sidebar/Moblie Menu -->
+    <aside class="sidebar">
+      <div class="sidebar--head"></div>
+      <div class="sidebar--body">
+        <ul>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </div>
+    </aside>
+    <!-- End Sidebar/Moblie Menu -->
+
+    <!-- Footer -->
     <footer><p id="copyright">Copyright &copy;2019 Neat Studios All Rights Reserved</p></footer>
+    <!-- End Footer -->
 
+    <!-- Scroll-to-Top Button -->
     <button class="top-button"><a href="#top" target="_top">top</a></button>
+
+    <!-- Modal Space (For outside click events (i.e Sidebars, Modals, etc.)) -->
     <div class="modal-space" id="outside-click"></div>
 
-    <!-- Javascript/ -->
+    <!-- Javascript Files/Dependencies/CDN -->
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="js/smooth-scroll.js"></script>
     <script src="js/blankshield.js"></script>
