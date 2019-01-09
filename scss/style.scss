@@ -26,6 +26,10 @@ body {
   min-width: 360px;
   background-color: $white;
   width: 100%;
+
+  &.preload * {
+    animation: none !important;
+  }
 }
 
 .modal-space {
@@ -184,57 +188,55 @@ main {
     height: auto;
     width: 100%;
     padding-top: 66px;
-  }
 
-  .slide {
-    display: none;
-    animation: fade 1s ease-out;
-  
-    @keyframes fade {
-      from {
-        opacity: 0;
+    .slide {
+      display: none;
+      animation: fadeIn 1s ease-out;
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
       }
-      to {
-        opacity: 1;
+
+      &.active {
+        display: block;
       }
     }
-  }
 
-  img {
-    display: block;
-    height: auto;
-    width: 100%;
-  }
+    .left-arrow,
+    .right-arrow {
+      position: absolute;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: $dark;
+      color: #ddd;
+      padding: 0.5rem;
+      top: calc(50% + (66px / 2));
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
 
-  .left-arrow,
-  .right-arrow {
-    position: absolute;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: $dark;
-    color: #ddd;
-    padding: 0.5rem;
-    top: calc(50% + (66px / 2));
-    transform: translateY(-50%);
-    cursor: pointer;
-    transition: 0.5s ease;
-  }
+    .left-arrow {
+      left: 0;
+      border-radius: 0 3px 3px 0;
+    }
 
-  .left-arrow {
-    left: 0;
-    border-radius: 0 3px 3px 0;
-  }
+    .right-arrow {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
 
-  .right-arrow {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    .left-arrow:hover,
+    .right-arrow:hover {
+      opacity: 0.8;
+    }
   }
-
-  .left-arrow:hover,
-  .right-arrow:hover {
-    opacity: 0.8;
-  }
-
   .dot-box {
     background-color: $light;
     padding: 1rem;
@@ -337,14 +339,5 @@ footer {
     padding: 4px;
     color: $white;
     text-align: center;
-  }
-}
-
-.test {
-  padding-left: 0;
-  transition: 250ms ease-out;
-
-  &__active {
-    padding-left: 300px;
   }
 }

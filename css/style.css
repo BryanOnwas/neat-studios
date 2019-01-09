@@ -1402,6 +1402,11 @@ body {
   width: 100%;
 }
 
+body.preload * {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+
 .modal-space {
   position: fixed;
   left: 0;
@@ -1581,13 +1586,13 @@ main .showcase {
   padding-top: 66px;
 }
 
-main .slide {
+main .showcase .slide {
   display: none;
-  -webkit-animation: fade 1s ease-out;
-          animation: fade 1s ease-out;
+  -webkit-animation: fadeIn 1s ease-out;
+          animation: fadeIn 1s ease-out;
 }
 
-@-webkit-keyframes fade {
+@-webkit-keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -1596,7 +1601,7 @@ main .slide {
   }
 }
 
-@keyframes fade {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -1605,14 +1610,12 @@ main .slide {
   }
 }
 
-main img {
+main .showcase .slide.active {
   display: block;
-  height: auto;
-  width: 100%;
 }
 
-main .left-arrow,
-main .right-arrow {
+main .showcase .left-arrow,
+main .showcase .right-arrow {
   position: absolute;
   font-size: 1.5rem;
   font-weight: bold;
@@ -1627,18 +1630,18 @@ main .right-arrow {
   transition: 0.5s ease;
 }
 
-main .left-arrow {
+main .showcase .left-arrow {
   left: 0;
   border-radius: 0 3px 3px 0;
 }
 
-main .right-arrow {
+main .showcase .right-arrow {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-main .left-arrow:hover,
-main .right-arrow:hover {
+main .showcase .left-arrow:hover,
+main .showcase .right-arrow:hover {
   opacity: 0.8;
 }
 
@@ -1749,14 +1752,4 @@ footer #copyright {
   padding: 4px;
   color: #fff;
   text-align: center;
-}
-
-.test {
-  padding-left: 0;
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-}
-
-.test__active {
-  padding-left: 300px;
 }

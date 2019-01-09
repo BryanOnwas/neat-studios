@@ -11,6 +11,13 @@ const seconds = 5000;
 let time = setInterval(auto, seconds);
 let current = 0;
 
+// This function is necessary to prevent the first css animation from playing on load
+function delay() {
+  setTimeout(function() {
+    document.body.className = '';
+  }, seconds);
+}
+
 // Include Smooth Scroll functionality
 let scroll = new SmoothScroll('a[href*="#"]', {
   speed: 500,
@@ -47,6 +54,7 @@ navDots.forEach(function(navDot, i) {
     if (current === i || navDot.className !== 'dot') {
       return;
     }
+    document.body.className = '';
     clearInterval(time);
     time = setInterval(auto, seconds);
     current = i;
@@ -56,12 +64,14 @@ navDots.forEach(function(navDot, i) {
 
 // Left arrow click
 leftArrow.addEventListener('click', function() {
+  document.body.className = '';
   current === 0 ? (current = navDots.length - 1) : current--;
   start();
 });
 
 // Right arrow click
 rightArrow.addEventListener('click', function() {
+  document.body.className = '';
   current === navDots.length - 1 ? (current = 0) : current++;
   start();
 });
@@ -71,7 +81,6 @@ images.forEach(function(image) {
   image.addEventListener('mouseover', function() {
     clearInterval(time);
   });
-  start();
 });
 
 // Start automatic slide when not hovered
@@ -80,7 +89,6 @@ images.forEach(function(image) {
     clearInterval(time);
     time = setInterval(auto, seconds);
   });
-  start();
 });
 
 // Stop automatic slider when left arrow is hovered
@@ -119,3 +127,5 @@ function headTop() {
 function btnTop() {
   window.pageYOffset > 200 ? (topBtn.style.right = '0') : (topBtn.style.right = '-100px');
 }
+
+delay();
