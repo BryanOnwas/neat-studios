@@ -1466,6 +1466,10 @@ footer.resize {
   padding-left: 300px;
 }
 
+.current {
+  background-color: gray;
+}
+
 /* Header Selectors */
 header {
   position: fixed;
@@ -1484,7 +1488,7 @@ header .top {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  background-color: #222;
+  background-color: #333;
   color: #fff;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -1527,12 +1531,8 @@ header .top--menu li {
   transition: 0.25s ease;
 }
 
-header .top--menu li #current {
-  background-color: #fc4f4f;
-}
-
 header .top--menu li:hover {
-  background: #333;
+  background: #444;
 }
 
 header .top--menu li a {
@@ -1545,7 +1545,7 @@ header .top--social {
   -ms-flex-preferred-size: 300px;
       flex-basis: 300px;
   border-left: 1px solid #fff;
-  background-color: #333;
+  background-color: #444;
 }
 
 header .top--social a {
@@ -1629,7 +1629,7 @@ main .showcase .right-arrow {
   position: absolute;
   font-size: 1.5rem;
   font-weight: bold;
-  background: #333;
+  background: #444;
   color: #ddd;
   padding: 0.5rem;
   top: calc(50% + (66px / 2));
@@ -1675,7 +1675,7 @@ main .dot {
 
 main .active,
 main .dot:hover {
-  background-color: #333;
+  background-color: #444;
 }
 
 main #content {
@@ -1692,12 +1692,12 @@ main #content p {
 main .content--tweet {
   border: 1px solid #f2f2f2;
   border-radius: 4px;
-  max-width: 80%;
+  width: 768px;
   text-align: center;
   margin: 4rem auto;
-  overflow: scroll;
   max-height: 960px;
   position: relative;
+  overflow-y: scroll;
 }
 
 /* Sideber Selectors */
@@ -1721,6 +1721,8 @@ aside.open {
 }
 
 aside .sidebar {
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
   position: relative;
   height: 100vh;
   overflow-y: visible;
@@ -1763,7 +1765,7 @@ aside .sidebar--menu--body li a {
 /* Footer Selectors */
 footer {
   height: 6rem;
-  background-color: #333;
+  background-color: #222;
   color: #fff;
 }
 
@@ -1773,7 +1775,7 @@ footer #copyright {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .top-button {
@@ -1801,4 +1803,10 @@ footer #copyright {
   padding: 4px;
   color: #fff;
   text-align: center;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+}
+
+.top-button a:hover {
+  background-color: #333;
 }
