@@ -1484,7 +1484,7 @@ header .top {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  background-color: #333;
+  background-color: #222;
   color: #fff;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -1532,8 +1532,7 @@ header .top--menu li #current {
 }
 
 header .top--menu li:hover {
-  -webkit-box-shadow: inset 0 -4px #fff;
-          box-shadow: inset 0 -4px #fff;
+  background: #333;
 }
 
 header .top--menu li a {
@@ -1546,7 +1545,7 @@ header .top--social {
   -ms-flex-preferred-size: 300px;
       flex-basis: 300px;
   border-left: 1px solid #fff;
-  background-color: #000;
+  background-color: #333;
 }
 
 header .top--social a {
@@ -1702,7 +1701,7 @@ main .content--tweet {
 }
 
 /* Sideber Selectors */
-.sidebar {
+aside {
   position: fixed;
   top: 66px;
   left: -300px;
@@ -1710,22 +1709,55 @@ main .content--tweet {
   z-index: 20;
   height: 100vh;
   width: 300px;
+  display: block;
   background-color: #333;
   overflow: auto;
   -webkit-transition: left 250ms ease-out;
   transition: left 250ms ease-out;
 }
 
-.sidebar.open {
-  position: fixed;
+aside.open {
   left: 0;
-  bottom: 0;
-  z-index: 20;
+}
+
+aside .sidebar {
+  position: relative;
   height: 100vh;
-  width: 300px;
-  background-color: #333;
-  -webkit-transition: left 250ms ease-out;
-  transition: left 250ms ease-out;
+  overflow-y: visible;
+  overflow-x: hidden;
+  color: #fff;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+}
+
+aside .sidebar i {
+  margin-right: 0.5rem;
+}
+
+aside .sidebar--menu--title {
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 1rem 0 1rem 1rem;
+  background-color: #222;
+}
+
+aside .sidebar--menu--body ul {
+  border-bottom: 1px solid #000;
+}
+
+aside .sidebar--menu--body li {
+  line-height: 4rem;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  display: block;
+}
+
+aside .sidebar--menu--body li:hover {
+  background-color: #444;
+}
+
+aside .sidebar--menu--body li a {
+  font-size: 1.25rem;
 }
 
 /* Footer Selectors */
