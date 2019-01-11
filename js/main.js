@@ -1,4 +1,4 @@
-//Declare Variables
+// Declare Variables
 let images = document.querySelectorAll('.slide');
 let navDots = document.querySelectorAll('.dot');
 let navIcon = document.querySelector('.hamburger');
