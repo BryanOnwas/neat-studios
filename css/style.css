@@ -1557,9 +1557,9 @@ header .top--social a {
           transform: translateY(-50%);
 }
 
-header .fa-youtube-square,
-header .fa-facebook-square,
-header .fa-twitter-square {
+header .top--social .fa-youtube-square,
+header .top--social .fa-facebook-square,
+header .top--social .fa-twitter-square {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   font-size: 2rem;
@@ -1569,22 +1569,22 @@ header .fa-twitter-square {
   transition: 0.25s ease;
 }
 
-header .fa-youtube-square:hover,
-header .fa-facebook-square:hover,
-header .fa-twitter-square:hover {
+header .top--social .fa-youtube-square:hover,
+header .top--social .fa-facebook-square:hover,
+header .top--social .fa-twitter-square:hover {
   -webkit-box-shadow: inset 0 -4px #fff;
           box-shadow: inset 0 -4px #fff;
 }
 
-header .fa-youtube-square:hover {
+header .top--social .fa-youtube-square:hover {
   color: #ff0000;
 }
 
-header .fa-facebook-square:hover {
+header .top--social .fa-facebook-square:hover {
   color: #3b5998;
 }
 
-header .fa-twitter-square:hover {
+header .top--social .fa-twitter-square:hover {
   color: #1da1f2;
 }
 

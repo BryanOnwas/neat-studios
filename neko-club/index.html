@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="animation.css" />
     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
-    
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -32,10 +32,10 @@
 
         <div id="chara" class="drag">
           <div id="chara-inner">
-            <img class="main" src="images/chara/seiko_default.png" />
-            <img id="face01" class="loop preload" src="images/chara/seiko_expression1.png" />
-            <img id="face02" class="loop" src="images/chara/seiko_expression2.png" />
-            <img id="face03" class="loop" src="images/chara/seiko_expression3.png" />
+            <img class="main lozad image-to-load-first" src="images/chara/seiko_default.png" />
+            <img id="face01" class="loop preload lozad image-to-load-first" src="images/chara/seiko_expression1.png" />
+            <img id="face02" class="loop lozad image-to-load-first" src="images/chara/seiko_expression2.png" />
+            <img id="face03" class="loop lozad image-to-load-first" src="images/chara/seiko_expression3.png" />
           </div>
         </div>
 
@@ -88,7 +88,7 @@
       </div>
     </main>
 
-    <footer><p>Copyright &copy;2018 Neat Studios All rights Reserved.</p></footer>
+    <footer><p>Copyright &copy;2019 Neat Studios All rights Reserved.</p></footer>
     <script src="main.js"></script>
   </body>
 </html>

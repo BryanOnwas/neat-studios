@@ -27,6 +27,13 @@ var gal;
 
 var mq = window.matchMedia('(max-width: 960px)');
 
+const observer = lozad();
+observer.observe();
+
+const coolImage = document.querySelector('.image-to-load-first')
+// ... trigger the load of a image before it appears on the viewport
+observer.triggerLoad(coolImage);
+
 // Skips the first fade animation after page loads
 // Note: If the CSS animation plays at x seconds, the timeout should be set longer than x seconds. I would add at least 0.5 more seconds just to be safe
 // Note: This function will disable if the content inside the timeout function was added on any event handler
