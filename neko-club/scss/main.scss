@@ -285,3 +285,20 @@ footer {
     color: #eee;
   }
 }
+
+.top-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: $black;
+  transition: 0.25s ease;
+  width: 100px;
+  border: none;
+  opacity: 0;
+
+  &.active {
+    z-index: 10;
+    opacity: 1;
+  }
+}
