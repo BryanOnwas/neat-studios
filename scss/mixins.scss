@@ -7,21 +7,21 @@
 
 /* Tablet Only */
 @mixin tablet {
-  @media (max-width: 1024px) {
+  @media (min-width: 768px) {
     @content;
   }
 }
 
 /* Desktop Only */
 @mixin desktop {
-  @media (max-width: 1216px) {
+  @media (min-width: 1024px) {
     @content;
   }
 }
 
 /* Widescreen-Desktop Only */
 @mixin widescreen {
-  @media (max-width: 1408px) {
+  @media (min-width: 1216px) {
     @content;
   }
 }

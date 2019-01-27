@@ -65,7 +65,7 @@ ul {
 }
 
 ul > li {
-  display: inline-block;
+  display: block;
 }
 
 li > a {
@@ -79,12 +79,33 @@ a {
   color: inherit;
 }
 
+i {
+  box-sizing: content-box;
+}
+
+.fa-youtube-square,
+.fa-facebook-square,
+.fa-twitter-square {
+  color: $white;
+}
+
 main,
 footer {
   transition: 250ms ease-out;
 
   &.resize {
-    padding-left: 300px;
+    padding-left: 0;
+  }
+
+  @include tablet {
+    main,
+    footer {
+      transition: 250ms ease-out;
+
+      &.resize {
+        padding-left: 250px;
+      }
+    }
   }
 }
 
@@ -109,13 +130,13 @@ header {
   }
 
   .top--logo {
-    flex-basis: 300px;
-    width: 300px;
+    width: 100%;
+    height: 66px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-right: 1px solid $white;
-    font-size: 1.9rem;
+    font-size: 2rem;
     background-color: $primary;
   }
 
@@ -124,67 +145,29 @@ header {
   }
 
   .top--menu {
-    flex-basis: auto;
-    background-color: inherit;
-  }
+    display: none;
 
-  .top--menu ul {
-    display: block;
-  }
+    @include tablet {
+      flex-basis: auto;
+      background-color: inherit;
 
-  .top--menu li {
-    transition: 0.25s ease;
-  }
+      ul {
+        display: block;
+      }
 
-  .top--menu li:hover {
-    background: $dark;
-  }
+      li {
+        transition: 0.25s ease;
+      }
 
-  .top--menu li a {
-    display: block;
-    line-height: 66px;
-    padding: 0 2rem;
-  }
+      li:hover {
+        background: $dark;
+      }
 
-  .top--social {
-    flex-basis: 300px;
-    border-left: 1px solid $white;
-    background-color: $dark;
-
-    a {
-      display: inline-block;
-      position: relative;
-      padding: 0 0.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .fa-youtube-square,
-    .fa-facebook-square,
-    .fa-twitter-square {
-      box-sizing: content-box;
-      font-size: 2rem;
-      color: $white;
-      padding: 0.5rem;
-      transition: 0.25s ease;
-    }
-
-    .fa-youtube-square:hover,
-    .fa-facebook-square:hover,
-    .fa-twitter-square:hover {
-      box-shadow: inset 0 -4px $white;
-    }
-
-    .fa-youtube-square:hover {
-      color: #ff0000;
-    }
-
-    .fa-facebook-square:hover {
-      color: #3b5998;
-    }
-
-    .fa-twitter-square:hover {
-      color: #1da1f2;
+      li a {
+        display: block;
+        line-height: 66px;
+        padding: 0 2rem;
+      }
     }
   }
 }
@@ -282,11 +265,9 @@ main {
   .content--tweet {
     border: 1px solid #f2f2f2;
     border-radius: 4px;
-    width: 768px;
-    text-align: center;
+    max-width: 768px;
     margin: 4rem auto;
-    max-height: 960px;
-    position: relative;
+    max-height: 720px;
     overflow-y: scroll;
   }
 }
@@ -295,11 +276,11 @@ main {
 aside {
   position: fixed;
   top: 66px;
-  left: -300px;
+  left: -100vw;
   bottom: 0;
   z-index: 20;
   height: 100vh;
-  width: 300px;
+  width: 100vw;
   display: block;
   background-color: $darker;
   overflow: auto;
@@ -321,7 +302,7 @@ aside {
     font-family: 'Roboto', sans-serif;
 
     i {
-      margin-right: 0.5rem;
+      margin-right: 1rem;
     }
 
     &--menu {
@@ -380,6 +361,7 @@ footer {
   width: 100px;
   border: none;
   opacity: 0;
+  border-top-left-radius: 1rem;
 
   &.active {
     z-index: 10;
@@ -388,12 +370,13 @@ footer {
 
   a {
     display: block;
-    font-size: 2rem;
+    font-size: 1.75rem;
     text-transform: uppercase;
-    padding: 4px;
+    padding: 0.5rem;
     color: $white;
     text-align: center;
     transition: 0.25s ease;
+    border-top-left-radius: 1rem;
 
     &:hover {
       background-color: $darker;
