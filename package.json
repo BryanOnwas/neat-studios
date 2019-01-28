@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/BryanOnwas/neat-studios/issues"
   },
-  "homepage": "https://github.com/BryanOnwas/neat-studios#readme"
+  "homepage": "https://github.com/BryanOnwas/neat-studios#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0"
+  }
 }
