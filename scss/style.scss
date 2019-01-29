@@ -265,8 +265,8 @@ main {
   .content--tweet {
     border: 1px solid #f2f2f2;
     border-radius: 4px;
-    max-width: 768px;
-    margin: 4rem auto;
+    max-width: calc(100% - 2rem);
+    margin: 1rem auto;
     max-height: 720px;
     overflow-y: scroll;
   }
@@ -276,7 +276,7 @@ main {
 aside {
   position: fixed;
   top: 66px;
-  left: -100vw;
+  left: -100%;
   bottom: 0;
   z-index: 20;
   height: 100vh;
@@ -284,10 +284,10 @@ aside {
   display: block;
   background-color: $darker;
   overflow: auto;
-  transition: left 250ms ease-out;
+  transition: 250ms ease-out;
 
   &.open {
-    left: 0;
+    transform: translateX(100%);
   }
 
   .sidebar {
@@ -347,7 +347,7 @@ footer {
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
