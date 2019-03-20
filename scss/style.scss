@@ -96,17 +96,6 @@ footer {
   &.resize {
     padding-left: 0;
   }
-
-  @include tablet {
-    main,
-    footer {
-      transition: 250ms ease-out;
-
-      &.resize {
-        padding-left: 250px;
-      }
-    }
-  }
 }
 
 .current {
@@ -146,29 +135,6 @@ header {
 
   .top--menu {
     display: none;
-
-    @include tablet {
-      flex-basis: auto;
-      background-color: inherit;
-
-      ul {
-        display: block;
-      }
-
-      li {
-        transition: 0.25s ease;
-      }
-
-      li:hover {
-        background: $dark;
-      }
-
-      li a {
-        display: block;
-        line-height: 66px;
-        padding: 0 2rem;
-      }
-    }
   }
 }
 
@@ -212,10 +178,6 @@ main {
       transform: translateY(-50%);
       cursor: pointer;
       transition: 0.5s ease;
-
-      @include tablet{
-        padding: 0.5rem;
-      }
     }
 
     .left-arrow {
